@@ -40,7 +40,7 @@ try :
 except URLError as e:
   streamlit.error()
 
-streamlit.stop()
+#streamlit.stop()
 
 def get_fruit_load_list():
   my_cur = my_cnx.cursor()
@@ -53,17 +53,6 @@ if streamlit.button('Get fruit load list'):
   #streamlit.header("My fruit load list contains:")
   streamlit.dataframe(my_data_rows)
 
-#second section
-streamlit.header("Fruityvice Fruit Advice!")
-fruit_choice1 = streamlit.text_input('Any other fruit would you like information about?','Kiwi')
-streamlit.write('The user entered ', fruit_choice1)
-
-fruityvice_response1 = requests.get("https://fruityvice.com/api/fruit/apple")
-
-# take the jason version of form and normailze it
-fruityvice_normalized1 = pandas.json_normalize(fruityvice_response1.json())
-# output in table form
-streamlit.dataframe(fruityvice_normalized1)
 
 my_cur.execute("insert into FRUIT_LOAD_LIST values ('from streamlit')")
 
