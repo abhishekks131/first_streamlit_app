@@ -56,6 +56,8 @@ fruityvice_normalized1 = pandas.json_normalize(fruityvice_response1.json())
 # output in table form
 streamlit.dataframe(fruityvice_normalized1)
 
+my_cur.execute("insert into FRUIT_LOAD_LIST values ('from streamlit')")
+
 
 
   
