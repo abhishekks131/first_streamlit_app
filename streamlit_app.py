@@ -45,16 +45,16 @@ streamlit.dataframe(my_data_rows)
 
 #second section
 streamlit.header("Fruityvice Fruit Advice!")
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+fruit_choice1 = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
-import requests
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/apple")
+#import requests
+fruityvice_response1 = requests.get("https://fruityvice.com/api/fruit/apple")
 
 # take the jason version of form and normailze it
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+fruityvice_normalized1 = pandas.json_normalize(fruityvice_response.json())
 # output in table form
-streamlit.dataframe(fruityvice_normalized)
+streamlit.dataframe(fruityvice_normalized1)
 
 
 
