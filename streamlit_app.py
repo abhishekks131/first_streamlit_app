@@ -45,7 +45,7 @@ streamlit.dataframe(my_data_rows)
 
 #second section
 streamlit.header("Fruityvice Fruit Advice!")
-fruit_choice1 = streamlit.text_input('What fruit would you like information about?','Kiwi')
+fruit_choice1 = streamlit.text_input('Any other fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice1)
 
 #import requests
